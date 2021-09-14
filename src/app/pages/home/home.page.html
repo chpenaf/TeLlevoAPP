@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Bienvenido {{data.usuario}}!</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-avatar (click)="onClickAvatar()">
+          <img src="/assets/icon/default_user.png">
+        </ion-avatar>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="ion-text-center" slot="fixed">
+
+    <ion-card (click)="onClickDriver()">
+      <ion-img 
+        #cardriver
+        src="/assets/cardriver.png" 
+        style="height: 60%; width: 60%; margin-left: auto; margin-right: auto;" 
+        class="ion-padding">
+      </ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>¿Tienes vehículo?</ion-card-subtitle>
+        <!-- <ion-card-title>Programar viaje</ion-card-title> -->
+        <ion-button expand="block" >
+          Ingresa tu ruta
+        </ion-button>
+      </ion-card-header>
+      <ion-card-content>
+        
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="onClickPassenger()">
+      <ion-img
+        #carpooling 
+        src="/assets/carpooling.png" 
+        style="height: 60%; width: 60%; margin-left: auto; margin-right: auto;"  
+        class="ion-padding">
+      </ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>¿Necesitas que te lleven?</ion-card-subtitle>
+        <!-- <ion-card-title>Programar viaje</ion-card-title> -->
+        <ion-button expand="block" >
+          Busca partner acá
+        </ion-button>
+      </ion-card-header>
+      <ion-card-content>
+        
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>
+<!-- <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="new-trip">
+      <ion-icon name="car-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="trip-history">
+      <ion-icon name="time-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="profile">
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->

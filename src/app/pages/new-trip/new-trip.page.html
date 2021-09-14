@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Bienvenido {{data.usuario}}!</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-avatar (click)="onClickAvatar()">
+          <img src="/assets/icon/default_user.png">
+        </ion-avatar>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>¿Tienes vehículo?</ion-card-subtitle>
+      <ion-card-title>Programar viaje</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      contenido
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>¿Necesitas que te lleven?</ion-card-subtitle>
+      <ion-card-title>Programar viaje</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      contenido
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
