@@ -1,0 +1,29 @@
+<app-header [backButton]="true"
+            titulo="Perfil de usuario">
+</app-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{ userData.email }}</ion-card-subtitle>
+      <ion-card-title>{{ userData.name }}</ion-card-title>
+    </ion-card-header>
+    <img [src]="userData | avatar" >
+    <ion-card-content>
+
+      <ion-button expand="block"
+                  [routerLink]="(['/application/update-profile/'])">
+        Actualizar perfil
+      </ion-button>
+
+      <ion-button expand="block"
+                  [routerLink]="(['/application/update-password/'])">
+        Cambiar contraseña
+      </ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+
+</ion-content>

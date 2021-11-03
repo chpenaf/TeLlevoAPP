@@ -1,15 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    
-    <ion-buttons 
+
+    <ion-buttons
       slot="start">
       <ion-back-button
-        defaultHref="/"
+        *ngIf="backButton"
+        defaultHref="/application/home"
         text=""
         color="primary">
       </ion-back-button>
     </ion-buttons>
 
     <ion-title class="ion-text-capitalize">{{ titulo }}</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-avatar (click)="onClickAvatar()">
+        <img [src]="userData | avatar" >
+      </ion-avatar>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
