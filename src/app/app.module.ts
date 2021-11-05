@@ -1,13 +1,17 @@
-import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,15 +23,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     IonicModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
   ],
   providers: [
-    {
-      provide: RouteReuseStrategy,
-      useClass: IonicRouteStrategy
-    }
+    Geolocation,
+    NativeGeocoder,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],
 })

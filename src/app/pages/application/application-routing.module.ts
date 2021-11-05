@@ -17,19 +17,31 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule )
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule ),
+    canLoad:[ ApplicationGuard ],
+    canActivate: [ ApplicationGuard ]
   },
   {
     path: 'update-profile',
-    loadChildren: () => import('./update-profile/update-profile.module').then( m => m.UpdateProfilePageModule)
+    loadChildren: () => import('./update-profile/update-profile.module').then( m => m.UpdateProfilePageModule),
+    canLoad:[ ApplicationGuard ],
+    canActivate: [ ApplicationGuard ]
   },
   {
     path: 'update-password',
-    loadChildren: () => import('./update-password/update-password.module').then( m => m.UpdatePasswordPageModule)
+    loadChildren: () => import('./update-password/update-password.module').then( m => m.UpdatePasswordPageModule),
+    canLoad:[ ApplicationGuard ],
+    canActivate: [ ApplicationGuard ]
   },
   {
     path: 'driver-newtrip',
-    loadChildren: () => import('./driver-newtrip/driver-newtrip.module').then( m => m.DriverNewtripPageModule)
+    loadChildren: () => import('./driver-newtrip/driver-newtrip.module').then( m => m.DriverNewtripPageModule),
+    canLoad:[ ApplicationGuard ],
+    canActivate: [ ApplicationGuard ]
+  },
+  {
+    path: 'driver-previewtrip',
+    loadChildren: () => import('./driver-previewtrip/driver-previewtrip.module').then( m => m.DriverPreviewtripPageModule)
   },
   {
     path: '**',

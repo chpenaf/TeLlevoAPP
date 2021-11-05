@@ -1,4 +1,8 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Component({
   selector: 'app-driver-newtrip',
@@ -7,11 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DriverNewtripPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private geolocation: Geolocation,
+    private router: Router
+  ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
   }
 
-  programar(){}
+  programar() {
+    this.geolocation
+      .getCurrentPosition()
+      .then((resp) => {
+        console.log(resp);
+        this.router.navigate(['application/driver-previewtrip']);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
 }

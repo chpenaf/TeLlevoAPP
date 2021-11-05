@@ -1,0 +1,19 @@
+<app-header [backButton]="true"
+            titulo="Confirmar viaje">
+</app-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Visa preliminar ruta</ion-card-subtitle>
+      <ion-card-title>Viaje programado para 23:45 aprox.</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div id="map_canvas">
+        <ion-button expand="block" (click)="confirmar()">
+          Confirmar
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
